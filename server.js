@@ -20,7 +20,8 @@ app.get('/error', (req, res) => {
     res.send("Database connection failed: Access denied for user 'root'");
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
